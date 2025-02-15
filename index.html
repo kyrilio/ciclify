@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ciclify - Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Font Awesome Icon Library -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    function toggleMenu() {
+      const menu = document.querySelector(".menu-dropdown");
+      menu.classList.toggle("open");
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <div class="menu-button" onclick="toggleMenu()">☰</div>
+      <div class="logo">Ciclify</div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html" class="active">Dashboard</a></li>
+        <li><a href="workflow.html">Workflow</a></li>
+        <li><a href="iot.html">Predictive Maintenance</a></li>
+      </ul>
+    </nav>
+    <button class="login-button">
+      <i class="fa-solid fa-user"></i> Log In
+    </button>
+  </header>
+
+  <div class="menu-dropdown">
+    <ul>
+      <li><a href="#reports">Reports</a></li>
+      <li><a href="#tasks">Tasks</a></li>
+      <li><a href="#history">History</a></li>
+    </ul>
+  </div>
+
+  <main>
+    <!-- Metrics Section -->
+    <section class="dashboard-metrics">
+        <div class="status-box metric-card">
+          <div class="card-header">
+            <p>Status: <span class="status-indicator">On Track</span></p>
+            <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
+          </div>
+          <h2 class="status-text">no discrepancies</h2>
+        </div>
+        <div class="kpi-box metric-card">
+          <div class="card-header">
+            <p>Expected Returns</p>
+            <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
+          </div>
+          <h2>320</h2>
+          <p class="kpi-change"><i class="fa-solid fa-arrow-up"></i> +10% from 290</p>
+        </div>
+        <div class="kpi-box metric-card">
+          <div class="card-header">
+            <p>On-Time Processing (%)</p>
+            <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
+          </div>
+          <h2>92%</h2>
+          <p class="kpi-change"><i class="fa-solid fa-arrow-up"></i> +4% from last period</p>
+        </div>
+      </section>      
+
+    <!-- Main Dashboard Content -->
+    <section class="dashboard-container">
+      <aside class="sidebar">
+        <h3>Filters</h3>
+        <label for="date-range">Date Range:</label>
+        <input type="date" id="date-range" />
+        <label for="partner-selection">Partner Selection:</label>
+        <select id="partner-selection">
+          <option>All Partners</option>
+          <option>Partner A</option>
+          <option>Partner B</option>
+        </select>
+      </aside>
+
+      <div class="data-visuals">
+        <div class="chart-row">
+          <div class="chart-section">
+            <div class="card-header">
+              <h3>Return Volumes (Items per Month)</h3>
+              <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
+            </div>
+            <canvas id="lineChart"></canvas>
+          </div>
+          <div class="chart-section">
+            <div class="card-header">
+              <h3>Processing Time (Minutes per Task)</h3>
+              <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
+            </div>
+            <canvas id="barChart"></canvas>
+          </div>
+        </div>
+        <div class="chart-row">
+          <div class="chart-section">
+            <div class="card-header">
+              <h3>Cost Distribution (Percentage of Total Cost)</h3>
+              <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
+            </div>
+            <canvas id="pieChart"></canvas>
+          </div>
+          <div class="chart-section new-chart-box">
+            <div class="card-header">
+              <h3>Add New Chart</h3>
+            </div>
+            <p>Placeholder for new charts</p>
+          </div>
+        </div>
+      </div>      
+    </section>
+  </main>
+
+  <script>
+    // Example Chart.js Setup with responsive options
+    var ctx1 = document.getElementById('lineChart').getContext('2d');
+    var ctx2 = document.getElementById('barChart').getContext('2d');
+    var ctx3 = document.getElementById('pieChart').getContext('2d');
+
+    new Chart(ctx1, {
+      type: 'line',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar'],
+        datasets: [
+          {
+            label: 'Items Returned',
+            data: [10, 20, 15],
+            borderColor: '#FFC20E',
+            fill: false
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+
+    new Chart(ctx2, {
+      type: 'bar',
+      data: {
+        labels: ['Jan', 'Feb', 'Mar'],
+        datasets: [
+          {
+            label: 'Processing Time (min)',
+            data: [5, 8, 6],
+            backgroundColor: '#FFC20E'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+
+    new Chart(ctx3, {
+      type: 'pie',
+      data: {
+        labels: ['Cost Saved', 'Cost Spent'],
+        datasets: [
+          {
+            data: [70, 30],
+            backgroundColor: ['#FFC20E', '#E30613']
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false
+      }
+    });
+  </script>
+</body>
+</html>
