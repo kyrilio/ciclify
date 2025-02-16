@@ -427,5 +427,30 @@ nav a.active {
   margin-right: 8px;
   font-size: 20px;
 }
+.chart-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.chart-row .chart-section {
+  flex: 1;
+}
+
+/* Make sure each chart section has a consistent height */
+.chart-section canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+/* Placeholder box styling */
+.new-chart-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  min-height: 300px; /* Match the canvas height */
+}
 
   

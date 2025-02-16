@@ -184,6 +184,37 @@
         maintainAspectRatio: false
       }
     });
+    var ctxROI = document.getElementById('roiChart').getContext('2d');
+  new Chart(ctxROI, {
+    type: 'line',
+    data: {
+      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+      datasets: [
+        {
+          label: 'Cost Savings (%)',
+          data: [5, 10, 15, 18, 22], // Example data
+          borderColor: '#007BFF',   // Blue line
+          fill: false,
+          tension: 0.2             // Slight curve in the line
+        }
+      ]
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks: {
+            // Display y-axis labels as percentages
+            callback: function(value) {
+              return value + '%';
+            }
+          }
+        }
+      }
+    }
+  });
   </script>
 </body>
 </html>
