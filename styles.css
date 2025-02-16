@@ -1,345 +1,13 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #F5F5F5;
-    color: #000000;
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* Header & Navigation */
-  header {
-    background-color: #FFC20E;
-    padding: 15px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
-  
-  .header-left {
-    display: flex;
-    align-items: center;
-  }
-  
-  .logo {
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  nav ul {
-    list-style: none;
-    display: flex;
-    gap: 15px;
-    margin: 0;
-    padding: 0;
-  }
-  
-  nav a {
-    text-decoration: none;
-    color: #000000;
-    font-weight: bold;
-    padding: 10px;
-    transition: background 0.3s;
-  }
-  
-  nav a:hover,
-  nav a.active {
-    background-color: #E30613;
-    color: #FFFFFF;
-    border-radius: 5px;
-  }
-  
-  /* Menu Button & Dropdown */
-  .menu-button {
-    cursor: pointer;
-    font-size: 24px;
-    margin-right: 15px;
-  }
-  
-  .menu-dropdown {
-    display: none;
-    position: absolute;
-    top: 60px;
-    left: 20px;
-    background: #333;
-    color: white;
-    padding: 10px;
-    border-radius: 5px;
-    z-index: 1000;
-  }
-  
-  .menu-dropdown.open {
-    display: block;
-  }
-  
-  .menu-dropdown ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .menu-dropdown ul li {
-    margin: 10px 0;
-  }
-  
-  .menu-dropdown ul li a {
-    color: white;
-    text-decoration: none;
-  }
-  
-  /* Login Button */
-  .login-button {
-    background: #FFC20E;
-    color: black;
-    padding: 8px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-  }
-  
-  .login-button i {
-    margin-right: 8px;
-    font-size: 20px;
-  }
-  
-  /* Dashboard Metrics */
-  .dashboard-metrics {
-    display: flex;
-    gap: 20px;
-    padding: 0 20px 20px;
-    flex-wrap: wrap;
-    margin-top: 30px; /* Increased margin */
-  }
-  
-  
-  .metric-card {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 5px;
-    flex: 1;
-    min-width: 200px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    position: relative;
-  }
-  
-  .card-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-  }
-  
-  .filter-button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    font-size: 18px;
-    color: #000;
-    transition: color 0.3s;
-  }
-  
-  .filter-button:hover {
-    color: #E30613;
-  }
-  
-  .dashboard-metrics p {
-    margin: 0;
-    font-size: 16px;
-  }
-  
-  .dashboard-metrics h2 {
-    margin: 10px 0 0;
-    font-size: 32px;
-    font-weight: bold;
-  }
-  
-  /* Status Indicator */
-  .status-indicator {
-    font-weight: bold;
-    color: #28A745;
-  }
-  
-  /* Dashboard Layout */
-  .dashboard-container {
-    display: flex;
-    gap: 20px;
-    padding: 20px;
-    flex-wrap: wrap;
-  }
-  
-  .sidebar {
-    background-color: #FFFFFF;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-    min-width: 220px;
-  }
-  
-  .sidebar h3 {
-    margin-top: 0;
-    margin-bottom: 15px;
-  }
-  
-  .sidebar label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-  }
-  
-  .sidebar input,
-  .sidebar select {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  .data-visuals {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    flex: 1;
-  }
-  
-  /* Chart Sections */
-  .chart-section {
-    background-color: #FFFFFF;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  .chart-section .card-header {
-    margin-bottom: 15px;
-  }
-  
-  .chart-section h3 {
-    margin: 0;
-    font-size: 20px;
-    border-bottom: 1px solid #ccc;
-    padding-bottom: 5px;
-  }
-  
-  .data-visuals canvas {
-    width: 100% !important;
-    height: 300px !important;
-  }
-  
-  /* Existing Styles for Workflow, Alerts, and Predictive Maintenance remain unchanged */
-  .workflow-container {
-    display: flex;
-    gap: 15px;
-    padding: 20px;
-    justify-content: center;
-  }
-  
-  .workflow-step {
-    background-color: #FFC20E;
-    padding: 15px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .alerts p {
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    font-weight: bold;
-  }
-  
-  .alerts .error {
-    background-color: #E30613;
-    color: white;
-  }
-  
-  .alerts .success {
-    background-color: #28A745;
-    color: white;
-  }
-  
-  .iot-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-  }
-  
-  #map-view {
-    width: 80%;
-    height: 300px;
-    background-color: #D3D3D3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    color: #000000;
-    border-radius: 5px;
-  }
-  
-  .notifications {
-    margin-top: 20px;
-  }
-  
-  .notifications .alert {
-    padding: 10px;
-    border-radius: 5px;
-    font-weight: bold;
-    margin: 5px 0;
-  }
-  
-  .notifications .alert.critical {
-    background-color: #E30613;
-    color: white;
-  }
-  
-  .notifications .alert.warning {
-    background-color: #FFC20E;
-    color: black;
-  }
-  
-  .notifications .alert.normal {
-    background-color: #28A745;
-    color: white;
-  }
-
-  .chart-row {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
+  font-family: Arial, sans-serif;
+  background-color: #F5F5F5;
+  color: #000000;
+  margin: 0;
+  padding: 0;
 }
 
-.chart-row .chart-section {
-  flex: 1;
-}
-
-/* New Chart Placeholder Styling */
-.new-chart-box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #aaa;
-  min-height: 300px; /* Match the canvas height of other charts */
-}
-
-.kpi-change {
-    font-size: 16px;
-    margin-top: 5px;
-  }
-  
-  .kpi-change .fa-arrow-up {
-    color: #28A745; /* Green for positive change */
-  }
-  
-  .kpi-change .fa-arrow-down {
-    color: #E30613; /* Red for negative change */
-  }
-  /* Header & Navigation */
+/* Header & Navigation */
 header {
   background-color: #FFC20E;
   padding: 15px 20px;
@@ -389,6 +57,37 @@ nav a.active {
   margin-right: 15px;
 }
 
+.menu-dropdown {
+  display: none;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  background: #333;
+  color: white;
+  padding: 10px;
+  border-radius: 5px;
+  z-index: 1000;
+}
+
+.menu-dropdown.open {
+  display: block;
+}
+
+.menu-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-dropdown ul li {
+  margin: 10px 0;
+}
+
+.menu-dropdown ul li a {
+  color: white;
+  text-decoration: none;
+}
+
 /* Header Actions */
 .header-actions {
   display: flex;
@@ -420,13 +119,156 @@ nav a.active {
   cursor: pointer;
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  margin-right: 10px; /* Place to left of login */
 }
 
 .upload-button i {
   margin-right: 8px;
   font-size: 20px;
 }
+
+.upload-button:hover {
+  background-color: #0056b3;
+}
+
+/* Dashboard Metrics */
+.dashboard-metrics {
+  display: flex;
+  gap: 20px;
+  padding: 0 20px 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.metric-card {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 5px;
+  flex: 1;
+  min-width: 200px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.filter-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  color: #000;
+  transition: color 0.3s;
+}
+
+.filter-button:hover {
+  color: #E30613;
+}
+
+.dashboard-metrics p {
+  margin: 0;
+  font-size: 16px;
+}
+
+.dashboard-metrics h2 {
+  margin: 10px 0 0;
+  font-size: 32px;
+  font-weight: bold;
+}
+
+/* KPI Change */
+.kpi-change {
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.kpi-change .fa-arrow-up {
+  color: #28A745; /* Green for positive change */
+}
+
+.kpi-change .fa-arrow-down {
+  color: #E30613; /* Red for negative change */
+}
+
+/* Status Indicator */
+.status-indicator {
+  font-weight: bold;
+  color: #28A745;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  background-color: #FFFFFF;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  min-width: 220px;
+}
+
+.sidebar h3 {
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.sidebar label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.sidebar input,
+.sidebar select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.data-visuals {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  flex: 1;
+}
+
+/* Chart Sections */
+.chart-section {
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.chart-section .card-header {
+  margin-bottom: 15px;
+}
+
+.chart-section h3 {
+  margin: 0;
+  font-size: 20px;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+}
+
+.data-visuals canvas {
+  width: 100% !important;
+  height: 300px !important;
+}
+
+/* Chart Row & Placeholder */
 .chart-row {
   display: flex;
   gap: 20px;
@@ -437,20 +279,90 @@ nav a.active {
   flex: 1;
 }
 
-/* Make sure each chart section has a consistent height */
-.chart-section canvas {
-  width: 100% !important;
-  height: 300px !important;
-}
-
-/* Placeholder box styling */
 .new-chart-box {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: #aaa;
-  min-height: 300px; /* Match the canvas height */
+  min-height: 300px;
 }
 
-  
+/* Additional Existing Styles */
+/* Workflow, Alerts, Predictive Maintenance etc. */
+.workflow-container {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  justify-content: center;
+}
+
+.workflow-step {
+  background-color: #FFC20E;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.alerts p {
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.alerts .error {
+  background-color: #E30613;
+  color: white;
+}
+
+.alerts .success {
+  background-color: #28A745;
+  color: white;
+}
+
+.iot-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+#map-view {
+  width: 80%;
+  height: 300px;
+  background-color: #D3D3D3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  color: #000000;
+  border-radius: 5px;
+}
+
+.notifications {
+  margin-top: 20px;
+}
+
+.notifications .alert {
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.notifications .alert.critical {
+  background-color: #E30613;
+  color: white;
+}
+
+.notifications .alert.warning {
+  background-color: #FFC20E;
+  color: black;
+}
+
+.notifications .alert.normal {
+  background-color: #28A745;
+  color: white;
+}

@@ -38,7 +38,6 @@
     </div>    
   </header>
   
-
   <div class="menu-dropdown">
     <ul>
       <li><a href="#reports">Reports</a></li>
@@ -50,30 +49,30 @@
   <main>
     <!-- Metrics Section -->
     <section class="dashboard-metrics">
-        <div class="status-box metric-card">
-          <div class="card-header">
-            <p>Status: <span class="status-indicator">On Track</span></p>
-            <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
-          </div>
-          <h2 class="status-text">no discrepancies</h2>
+      <div class="status-box metric-card">
+        <div class="card-header">
+          <p>Status: <span class="status-indicator">On Track</span></p>
+          <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
         </div>
-        <div class="kpi-box metric-card">
-          <div class="card-header">
-            <p>Expected Returns</p>
-            <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
-          </div>
-          <h2>320</h2>
-          <p class="kpi-change"><i class="fa-solid fa-arrow-up"></i> +10% from 290</p>
+        <h2 class="status-text">no discrepancies</h2>
+      </div>
+      <div class="kpi-box metric-card">
+        <div class="card-header">
+          <p>Expected Returns</p>
+          <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
         </div>
-        <div class="kpi-box metric-card">
-          <div class="card-header">
-            <p>On-Time Processing (%)</p>
-            <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
-          </div>
-          <h2>92%</h2>
-          <p class="kpi-change"><i class="fa-solid fa-arrow-up"></i> +4% from last period</p>
+        <h2>320</h2>
+        <p class="kpi-change"><i class="fa-solid fa-arrow-up"></i> +10% from 290</p>
+      </div>
+      <div class="kpi-box metric-card">
+        <div class="card-header">
+          <p>On-Time Processing (%)</p>
+          <button class="filter-button"><i class="fa-solid fa-filter"></i></button>
         </div>
-      </section>      
+        <h2>92%</h2>
+        <p class="kpi-change"><i class="fa-solid fa-arrow-up"></i> +4% from last period</p>
+      </div>
+    </section>      
 
     <!-- Main Dashboard Content -->
     <section class="dashboard-container">
@@ -126,11 +125,8 @@
   </main>
 
   <script>
-    // Example Chart.js Setup with responsive options
+    // Chart for Return Volumes (Line Chart)
     var ctx1 = document.getElementById('lineChart').getContext('2d');
-    var ctx2 = document.getElementById('barChart').getContext('2d');
-    var ctx3 = document.getElementById('pieChart').getContext('2d');
-
     new Chart(ctx1, {
       type: 'line',
       data: {
@@ -150,6 +146,8 @@
       }
     });
 
+    // Chart for Processing Time (Bar Chart)
+    var ctx2 = document.getElementById('barChart').getContext('2d');
     new Chart(ctx2, {
       type: 'bar',
       data: {
@@ -168,54 +166,37 @@
       }
     });
 
-    new Chart(ctx3, {
-      type: 'pie',
+    // Chart for Cost Savings / ROI Over Time (Line Chart)
+    var ctxROI = document.getElementById('roiChart').getContext('2d');
+    new Chart(ctxROI, {
+      type: 'line',
       data: {
-        labels: ['Cost Saved', 'Cost Spent'],
+        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
         datasets: [
           {
-            data: [70, 30],
-            backgroundColor: ['#FFC20E', '#E30613']
+            label: 'Cost Savings (%)',
+            data: [5, 10, 15, 18, 22],
+            borderColor: '#007BFF',
+            fill: false,
+            tension: 0.2
           }
         ]
       },
       options: {
         responsive: true,
-        maintainAspectRatio: false
-      }
-    });
-    var ctxROI = document.getElementById('roiChart').getContext('2d');
-  new Chart(ctxROI, {
-    type: 'line',
-    data: {
-      labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
-      datasets: [
-        {
-          label: 'Cost Savings (%)',
-          data: [5, 10, 15, 18, 22], // Example data
-          borderColor: '#007BFF',   // Blue line
-          fill: false,
-          tension: 0.2             // Slight curve in the line
-        }
-      ]
-    },
-    options: {
-      responsive: true,
-      maintainAspectRatio: false,
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: {
-            // Display y-axis labels as percentages
-            callback: function(value) {
-              return value + '%';
+        maintainAspectRatio: false,
+        scales: {
+          y: {
+            beginAtZero: true,
+            ticks: {
+              callback: function(value) {
+                return value + '%';
+              }
             }
           }
         }
       }
-    }
-  });
+    });
   </script>
 </body>
 </html>
-
